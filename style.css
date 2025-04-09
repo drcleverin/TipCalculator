@@ -1,0 +1,251 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #dcd6e5d8, #083076);
+    /* background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff8a00); */
+    color: white;
+    text-align: center;
+}
+.logo-container {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    border-radius: 50%; /* Optional: Make the logo circular */
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8); /* Navbar background color */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Makes the navbar span the entire width */
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0; /* Positions it at the top of the viewport */
+    z-index: 1000; /* Ensures the navbar stays above other content */
+}
+
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #ff5733;
+}
+.navbar ul li a.active {
+    color: #ff5733;
+    border-bottom: 2px solid #ff5733; /* Persistent underline for active page */
+}
+
+/* Team Header Styling */
+.team-header {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.team-title {
+    font-size: 3rem;
+    font-weight: bold;
+    animation: glow 3s infinite;
+
+}
+.team-title span {
+    display: inline-block;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Position below */
+    animation: letterTransition 1.5s ease-in-out forwards; /* Trigger animation */
+}
+
+/* Keyframes for Animation */
+@keyframes letterTransition {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start from below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+/* Staggered Animation Delay for Each Letter */
+.team-title span:nth-child(1) { animation-delay: 0.1s; }
+.team-title span:nth-child(2) { animation-delay: 0.33s; }
+.team-title span:nth-child(3) { animation-delay: 0.25s; }
+.team-title span:nth-child(4) { animation-delay: 0.47s; }
+.team-title span:nth-child(5) { animation-delay: 0.9s; }
+.team-title span:nth-child(6) { animation-delay: 0.11s; }
+.team-title span:nth-child(7) { animation-delay: 0.33s; }
+.team-title span:nth-child(8) { animation-delay: 0.15s; }
+.team-title span:nth-child(9) { animation-delay: 1.17s; }
+.team-title span:nth-child(10) { animation-delay: 1.0s; }
+.team-title span:nth-child(11) { animation-delay: 1.1s; }
+/* Glow Animation for Team Title */
+@keyframes glow {
+    0%, 100% {
+        color: #a92d11;
+        text-shadow: 0 0 5px #ff5733, 0 0 10px #ff5733, 0 0 20px #ff5733;
+    }
+    50% {
+        color: #0a5f79;
+        text-shadow: 0 0 5px #33d1ff, 0 0 10px #33d1ff, 0 0 20px #33d1ff;
+    }
+}
+.team-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: justify;
+}
+
+/* Team Section Styling */
+.team-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Team Card Styling */
+.card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    margin: 10px;
+}
+
+.card .front, .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    transition: transform 0.6s ease-in-out;
+}
+
+.card .front {
+    background: rgba(238, 233, 233, 0.205);
+    color: black;
+}
+
+.card .back {
+    background: #ff5733;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Flip Effect */
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: rotateY(360deg);
+}
+
+/* Team Image Styling */
+.team-image {
+    width: 80%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Styling Inside Cards */
+h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+}
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.visual-card {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    width: 250px;
+    text-align: center;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.visual-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 12px rgba(0, 0, 0, 0.3);
+}
+
+.about-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.visual-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.visual-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.button-act {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-act:hover {
+    background-color: #e94e25;
+}

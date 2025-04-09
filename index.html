@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    
+</head>
+<body>
+    <!-- <nav class="navbar">
+        <ul>
+            <li><a href="../home.html" >Home</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../activity.html" class="active">Activity</a></li>
+        </ul>
+    </nav> -->
+    <div class="logo-container">
+        <img src="../img/logo.png" alt="Byte Buddies Logo" class="logo">
+    </div>
+    <!-- Header Section -->
+    <header>
+        <br>
+        <h1 class="team-title">
+            <span>T</span><span>i</span><span>p</span>
+            <span>B</span><span>u</span><span>d</span><span>d</span><span>i</span><span>e</span><span>s</span>
+        </h1>
+
+    </header>
+    <form>
+        
+        <label for="billAmount">Bill Amount:</label>
+        <input type="text" id="billAmount" placeholder="Enter bill amount" required><br><br>
+
+        <label for="serviceRating">Service Rating (1 to 10):</label>
+        <input type="range" id="serviceRating" min="1" max="10" step="1" value="5" 
+            oninput="document.getElementById('serviceValue').textContent = this.value">
+        <span id="serviceValue">5</span><br><br>
+
+        <label for="numPeople">Number of People:</label>
+        <input type="text" id="numPeople" placeholder="Enter number of people" required><br><br>
+
+        <label for="customTip">Custom Tip (₹):</label>
+        <input type="text" id="customTip" placeholder="Enter custom tip amount (optional)"><br><br>
+
+        <button type="button" onclick="calculateTipAndShare()">Calculate</button><br><br>
+    </form>
+
+    <div class="receipt-container" id="receiptContainer">
+        <div class="header">
+            <h2>Tip Receipt</h2>
+            <span id="currentDate"></span>
+        </div>
+        <div class="content">
+            <span class="label">Bill Amount:</span>
+            <span id="receiptBillAmount"></span>
+            <br>
+            <span class="label">Tip Amount:</span>
+            <span id="receiptTipAmount"></span>
+            <br>
+            <span class="label">Total Amount:</span>
+            <span id="receiptTotalAmount"></span>
+            <br>
+            <span class="label">Share Per Person:</span>
+            <span id="receiptSharePerPerson"></span>
+        </div>
+        <div class="footer">
+            <p class="thank-you">Thank you for using our Tip Calculator!</p>
+        </div>
+    </div>
+    
+</body>
+</html>
